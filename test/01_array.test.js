@@ -86,4 +86,15 @@ describe('Array', function() {
 			expect(array.remove(1)).to.deep.equal(["Hello"]);
 		});
 	}); // end "Remove" describe
+	describe('Shuffle', function () {
+		var array = [];
+		beforeEach(function () {
+			array = ["Hello", "World"];
+		});
+		
+		it('Should return array', function () {
+			array.shuffle();
+			expect(array).to.be.an("array");
+		});
+	}); // end "Shuffle" describe
 }); // end "Array" describe
