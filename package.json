@@ -1,14 +1,14 @@
 {
   "name": "scriptutils",
   "version": "1.0.0",
-  "description": "",
+  "description": "Utilities to make Javascript Easy",
   "main": "index.js",
   "scripts": {
     "test": "mocha"
   },
-  "keywords": [],
-  "author": "",
-  "license": "ISC",
+  "keywords": ["javascript", "array", "insert", "utilities"],
+  "author": "rrainn, Inc.",
+  "license": "MIT License",
   "devDependencies": {
     "chai": "^4.1.2",
     "mocha": "^4.0.1"
