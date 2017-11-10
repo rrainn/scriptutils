@@ -1,4 +1,4 @@
-# scriptutils [![Build Status](https://travis-ci.org/rrainn/scriptutils.svg?branch=master)](https://travis-ci.org/rrainn/scriptutils) [![NPM version](https://badge.fury.io/js/scriptutils.svg)](http://badge.fury.io/js/scriptutils) [![Known Vulnerabilities](https://snyk.io/test/github/rrainn/scriptutils/badge.svg)](https://snyk.io/test/github/rrainn/scriptutils)
+# scriptutils [![Build Status](https://travis-ci.org/rrainn/scriptutils.svg?branch=master)](https://travis-ci.org/rrainn/scriptutils) [![Coverage Status](https://coveralls.io/repos/github/rrainn/scriptutils/badge.svg?branch=master)](https://coveralls.io/github/rrainn/scriptutils?branch=master) [![NPM version](https://badge.fury.io/js/scriptutils.svg)](http://badge.fury.io/js/scriptutils) [![Known Vulnerabilities](https://snyk.io/test/github/rrainn/scriptutils/badge.svg)](https://snyk.io/test/github/rrainn/scriptutils)
 
 ### Install
 `npm install --save scriptutils`
