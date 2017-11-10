@@ -1,12 +1,17 @@
 {
   "name": "scriptutils",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "Utilities to make Javascript Easy",
   "main": "index.js",
   "scripts": {
     "test": "mocha"
   },
-  "keywords": ["javascript", "array", "insert", "utilities"],
+  "keywords": [
+    "javascript",
+    "array",
+    "insert",
+    "utilities"
+  ],
   "author": "rrainn, Inc.",
   "license": "MIT License",
   "devDependencies": {
