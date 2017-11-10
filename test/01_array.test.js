@@ -97,4 +97,23 @@ describe('Array', function() {
 			expect(array).to.be.an("array");
 		});
 	}); // end "Shuffle" describe
+	describe('Random Element', function () {
+		var array = [];
+		beforeEach(function () {
+			array = ["Hello", "World"];
+		});
+		
+		it('Should not return array', function () {
+			var element = array.randomElement();
+			expect(element).to.not.be.an("array");
+		});
+		it('Should not change array', function () {
+			var element = array.randomElement();
+			expect(array).to.deep.equal(["Hello", "World"]);
+		});
+		it('Should return element that exists in array', function () {
+			var element = array.randomElement();
+			expect(array.indexOf(element)).to.be.above(-1);
+		});
+	}); // end "Random Element" describe
 }); // end "Array" describe
