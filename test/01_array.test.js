@@ -48,4 +48,42 @@ describe('Array', function() {
 			expect(array.insert(1, ["First Test", "Second Test"])).to.deep.equal(["Hello", "First Test", "Second Test", "World"]);
 		});
 	}); // end "Insert" describe
+	describe('Remove', function () {
+		var array = [];
+		beforeEach(function () {
+			array = ["Hello", "World"];
+		});
+		
+		it('Should return original array if nothing is passed in', function () {
+			array.remove();
+			expect(array).to.deep.equal(["Hello", "World"]);
+		});
+		it('Should return original array if index is function', function () {
+			array.remove(function(){});
+			expect(array).to.deep.equal(["Hello", "World"]);
+		});
+		it('Should return original array if index is array', function () {
+			array.remove([]);
+			expect(array).to.deep.equal(["Hello", "World"]);
+		});
+		it('Should return original array if index is negitive number', function () {
+			array.remove(-5);
+			expect(array).to.deep.equal(["Hello", "World"]);
+		});
+		it('Should return original array if index is greater than array length', function () {
+			array.remove(100);
+			expect(array).to.deep.equal(["Hello", "World"]);
+		});
+		it('Should remove element', function () {
+			array.remove(1);
+			expect(array).to.deep.equal(["Hello"]);
+		});
+		it('Should remove elements if multiple indexes are passed in', function () {
+			array.remove(1, 0);
+			expect(array).to.deep.equal([]);
+		});
+		it('Should return correct array after inserting', function () {
+			expect(array.remove(1)).to.deep.equal(["Hello"]);
+		});
+	}); // end "Remove" describe
 }); // end "Array" describe
