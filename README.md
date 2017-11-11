@@ -12,7 +12,7 @@
 
 `<script src="https://unpkg.com/scriptutils"></script>` (will run latest version)
 
-`<script src="https://unpkg.com/scriptutils@X.Y.Z/dist/index.js"></script>` (will run specific version, replace `X.Y.Z` with version you wish to run)
+`<script src="https://unpkg.com/scriptutils@X.Y.Z/dist/browser/index.js"></script>` (will run specific version, replace `X.Y.Z` with version you wish to run)
 
 ### Arrays
 
