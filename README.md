@@ -14,6 +14,8 @@
 
 `<script src="https://unpkg.com/scriptutils@X.Y.Z/dist/browser/index.js"></script>` (will run specific version, replace `X.Y.Z` with version you wish to run)
 
+In browser mode it automatically creates a variable in the global scope called `scriptutils`. All examples will work on browser and Node.js.
+
 ### Arrays
 
 #### Array.insert(index, items)
