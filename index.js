@@ -1,1 +1,1 @@
-require('./array/index.js');
+require('./src/array/index.js');
