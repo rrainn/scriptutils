@@ -1,6 +1,6 @@
 {
   "name": "scriptutils",
-  "version": "1.0.2",
+  "version": "1.0.3",
   "description": "Utilities to make Javascript Easy",
   "main": "index.js",
   "scripts": {
