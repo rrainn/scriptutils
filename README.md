@@ -1,9 +1,18 @@
 # scriptutils [![Build Status](https://travis-ci.org/rrainn/scriptutils.svg?branch=master)](https://travis-ci.org/rrainn/scriptutils) [![Coverage Status](https://coveralls.io/repos/github/rrainn/scriptutils/badge.svg?branch=master)](https://coveralls.io/github/rrainn/scriptutils?branch=master) [![Known Vulnerabilities](https://snyk.io/test/github/rrainn/scriptutils/badge.svg)](https://snyk.io/test/github/rrainn/scriptutils) [![NPM version](https://badge.fury.io/js/scriptutils.svg)](http://badge.fury.io/js/scriptutils) [![unpkg](https://img.shields.io/badge/browser-unpkg-brightgreen.svg)](https://unpkg.com/scriptutils)
 
 ### Install
+
+#### Node.js
+
 `npm install --save scriptutils`
 
 `require('scriptutils');`
+
+#### Browser
+
+`<script src="https://unpkg.com/scriptutils"></script>` (will run latest version)
+
+`<script src="https://unpkg.com/scriptutils@X.Y.Z/dist/index.js"></script>` (will run specific version, replace `X.Y.Z` with version you wish to run)
 
 ### Arrays
 
