@@ -6,13 +6,15 @@
 
 `npm install --save scriptutils`
 
-`require('scriptutils');`
+`var scriptutils = require('scriptutils');`
 
 #### Browser
 
 `<script src="https://unpkg.com/scriptutils"></script>` (will run latest version)
 
 `<script src="https://unpkg.com/scriptutils@X.Y.Z/dist/browser/index.js"></script>` (will run specific version, replace `X.Y.Z` with version you wish to run)
+
+In browser mode it automatically creates a variable in the global scope called `scriptutils`. All examples will work on browser and Node.js.
 
 ### Arrays
 
@@ -68,4 +70,35 @@ This function will return a random element in the given array. This function has
 var myArray = ["Hello", "World"];
 myArray.randomElement();
 console.log(myArray); // "World"
+```
+
+
+### Numbers
+
+#### randomInt([min, max])
+
+This function will return a random integer based on the minimum and maximum values passed in. If no minimum or maximum values are passed in the function will output a random number between 1 and 100. This function has the potential to have different outputs every time it is run.
+
+```
+var randomNumber = scriptutils.randomInt(5, 50);
+console.log(randomNumber); // a random number between 5 and 50
+```
+
+```
+var randomNumber = scriptutils.randomInt();
+console.log(randomNumber); // a random number between 1 and 100
+```
+
+#### randomFloat([min, max])
+
+This function will return a random float based on the minimum and maximum values passed in. If no minimum or maximum values are passed in the function will output a random number between 1 and 100. This function has the potential to have different outputs every time it is run.
+
+```
+var randomNumber = scriptutils.randomFloat(5, 50);
+console.log(randomNumber); // a random number (float) between 5 and 50
+```
+
+```
+var randomNumber = scriptutils.randomFloat();
+console.log(randomNumber); // a random number (float) between 1 and 100
 ```
