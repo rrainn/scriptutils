@@ -4,7 +4,7 @@
   "description": "Utilities to make Javascript Easy",
   "main": "dist/node/index.js",
   "scripts": {
-    "test": "cross-env NODE_ENV=test gulp node-test && nyc mocha",
+    "test": "gulp node-test && nyc mocha",
     "coverage": "nyc report --reporter=text-lcov | coveralls",
     "build": "gulp",
     "version": "npm run build && git add -A dist",
