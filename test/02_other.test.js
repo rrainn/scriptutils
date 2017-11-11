@@ -1,4 +1,4 @@
-var scriptutils = require('../index.js');
+var scriptutils = require('../dist/node/index.js');
 var expect = require('chai').expect;
 
 describe('Other', function() {
