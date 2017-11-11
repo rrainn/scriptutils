@@ -121,6 +121,10 @@ describe('Other', function() {
 					var result = scriptutils.randomInt(5, 1);
 					expect(result).to.not.be.NaN;
 				});
+				it('Should return int', function () {
+					var result = scriptutils.randomInt(1, 5);
+					expect(result % 1 === 0).to.be.true;
+				});
 			});
 		}); // end "Get Random Integer" describe
 	}); // end "Number" describe
