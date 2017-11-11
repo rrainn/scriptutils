@@ -26,3 +26,9 @@ gulp.task('node', function () {
         .pipe(babel())
         .pipe(gulp.dest("./dist/node"))
 })
+
+gulp.task('node-test', function () {
+    gulp.src("./src/**")
+        .pipe(babel({plugins: ["istanbul"]}))
+        .pipe(gulp.dest("./dist/node-test"))
+})
