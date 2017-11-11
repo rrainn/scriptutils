@@ -86,3 +86,17 @@ console.log(randomNumber); // a random number between 5 and 50
 var randomNumber = scriptutils.randomInt();
 console.log(randomNumber); // a random number between 1 and 100
 ```
+
+#### randomFloat([min, max])
+
+This function will return a random float based on the minimum and maximum values passed in. If no minimum or maximum values are passed in the function will output a random number between 1 and 100. This function has the potential to have different outputs every time it is run.
+
+```
+var randomNumber = scriptutils.randomFloat(5, 50);
+console.log(randomNumber); // a random number (float) between 5 and 50
+```
+
+```
+var randomNumber = scriptutils.randomFloat();
+console.log(randomNumber); // a random number (float) between 1 and 100
+```
