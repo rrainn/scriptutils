@@ -1,4 +1,4 @@
-require('../index.js');
+require('../dist/node.js');
 var expect = require('chai').expect;
 
 describe('Array', function() {
