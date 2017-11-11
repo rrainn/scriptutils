@@ -1,5 +1,6 @@
 var gulp = require('gulp');
 var browserify = require('gulp-browserify');
+var babel = require('gulp-babel');
  
 gulp.task('default', function() {
     gulp.src('index.js')
@@ -7,5 +8,6 @@ gulp.task('default', function() {
           insertGlobals : true,
           debug : false
         }))
+        .pipe(babel())
         .pipe(gulp.dest('./dist'))
 });
