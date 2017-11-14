@@ -8,6 +8,11 @@ node_js:
   - "6"
   - "5"
   - "4"
+addons:
+  browserstack:
+    username: "charliefish1"
+    access_key:
+      secure: "OexBn2+UNwj1VaQSp8wPBoJWq0Jbwz0rDDD+YvvxnIAto9J3gIa80CFA4IXYm4oxBJibwHRzuvzYbP8sdX8PRoM61YEaM64E3lpTj7u5UmAyOJDAr+nKur4ICBl8y1XomDgcNOyXvDSdpiWtP+cYEuLN8qOEtSH8naKdcgO8x+LjcZC3LtOBq70K//j/NRtJ5E2AABPWoHC+Q3ZUuL0HlZdXocTf7QbHB4FAYBNjwanKDUKjHBQ3u4V/QaA4xxuiHiSkh9Q2Ov+OPC/9Mf2TyF1ERFi6FO8ggjz9zacKNmeqSnO6NR9wEDhIlRoOR3W9cT2v8PQWkCUhq5sg7PBKNS+nZ1UVSRVn0i11aONUwyftwSyia55ksmEQvklSDjXw4UBZugU6G1UdyAb2sos5g7Z33anww+ObHJ8HclV1YkaHOVp6qbrfFGtt/aEgftF3BYvR9O7+CrZaVdjCZRHSoSR0ptsqXninue3iEuNsSoD90lhM85e5k4eVQiKcaAx4QrlvwuyqqJWnpa4S6KdTyywJi2GxbtBqtRK3MD2ePpzkF0RfJMFndUyoytBEIM8Y1LlhL5e84Z21x0SPn6A2eCkWtmK/r0iEj+C7tnaXrtJSaw+3dy9OR8xAOArxBBJJfPJPVZ/LotP3Lgn/CBIbj0e0JdqJOLn97j8CThi/X1Y="
 cache:
   directories:
     - "node_modules"
