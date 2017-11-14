@@ -1,7 +1,7 @@
 #!/bin/bash
 if [ "$TARGET" = "test-browser" ]; then
    if [ "$TRAVIS_PULL_REQUEST" = "false" ]; then
-      ./node_modules/.bin/browserstack-runner
+      ./node_modules/.bin/gulp browser && ./node_modules/.bin/browserstack-runner
    else
       echo "Not running browser tests on pull requests"
    fi
