@@ -1,13 +1,24 @@
 language: node_js
-node_js:
-  - "node"
-  - "lts/*"
-  - "9"
-  - "8"
-  - "7"
-  - "6"
-  - "5"
-  - "4"
+matrix:
+  include:
+    - node_js: "node"
+      env: TARGET=test-browser
+    - node_js: "node"
+      env: TARGET=test-node
+    - node_js: "lts/*"
+      env: TARGET=test-node
+    - node_js: "9"
+      env: TARGET=test-node
+    - node_js: "8"
+      env: TARGET=test-node
+    - node_js: "7"
+      env: TARGET=test-node
+    - node_js: "6"
+      env: TARGET=test-node
+    - node_js: "5"
+      env: TARGET=test-node
+    - node_js: "4"
+      env: TARGET=test-node
 addons:
   browserstack:
     username: "charliefish1"
