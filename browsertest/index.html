@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title>scriptutils</title>
+		<script src="https://cdnjs.cloudflare.com/ajax/libs/mocha/4.0.1/mocha.min.js"></script>
+		<script src="http://chaijs.com/chai.js"></script>
+		<link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/mocha/4.0.1/mocha.min.css">
+		<script src="../dist/browser/index.js"></script>
+	</head>
+	<body>
+		<div id="mocha"></div>
+		<script>mocha.setup('bdd');</script>
+		<script>
+		window.onload = function() {
+	         mocha.run()
+	    };
+		</script>
+		<script>
+		var expect = chai.expect;
+		
+        // hack to bypass require in test files
+		var require = function (path) {
+			if (path == "../dist/node-test/index.js") {
+				return scriptutils;
+			} else {
+				return {expect: chai.expect};
+			}
+		}
+		</script>
+		
+		<script src="../test/01_array.test.js"></script>
+		<script src="../test/02_other.test.js"></script>
+	</body>
+</html>

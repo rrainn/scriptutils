@@ -1,14 +1,29 @@
 language: node_js
-node_js:
-  - "node"
-  - "lts/*"
-  - "9"
-  - "8"
-  - "7"
-  - "6"
-  - "5"
-  - "4"
+matrix:
+  include:
+  - node_js: node
+    env: TARGET=test-browser
+  - node_js: node
+    env: TARGET=test-node
+  - node_js: lts/*
+    env: TARGET=test-node
+  - node_js: '9'
+    env: TARGET=test-node
+  - node_js: '8'
+    env: TARGET=test-node
+  - node_js: '7'
+    env: TARGET=test-node
+  - node_js: '6'
+    env: TARGET=test-node
+  - node_js: '5'
+    env: TARGET=test-node
+  - node_js: '4'
+    env: TARGET=test-node
 cache:
   directories:
-    - "node_modules"
+  - node_modules
 after_success: npm run coverage
+env:
+  global:
+  - secure: nXdVDLPTAUWGdJFqGZMitKn7Q4Tczi7Lx+SdXOO/B3zjTono9y+5oC2lUjhdoIXJZjPv8lGKrXiNlLqfQa/wiIdguj1dhdbcvDyOilyFeKunmBDrGYrdq3xVq1qblzTUb7uLMp3ASGAtBbbpA1MXVoqJE/6q0HHD6RTun9POX9l1ssKdwSh3NFZG4TWNOZiRZnk4sowG0fiELnIME6UBMXuc79ldagiLYRzSN3xkuHn+AMOYDD7y1c90mkPSIsqIaUqJ3Pob8W1yaYVJc6rVNy/EUlHQVijIHXAIzuQlHAZ5p35qZ4h8MEUliz6NW6UNaaGpTKI3QpcsEAPUpzLE6VQLmwLaVTC+cFL6OigxsT2Yxkfi3syaeTPo4M3mmYC1ZJOcYhe1Z6biPSO9Ksr5jSl44avdnh/0mu2Ayn92PDb2aJ+GO2xdTSuSeqjofLwt/fCtaD54hGHFkplhy42AQ9JJwRP6Zt95QiR8/Y92ogj81fz7XXMPSdCl0HSOcUAevkt3hCzb6mtjRpWMgZgLmuis+EsrTbfFAPahQfpiC+tOETQ5pHz3dkAP6nPeGSBUKV/tSCwJMLluKtxWHQ31aqAMvscIt5yjenbOV2H8tNduENLWRUb3cOyYHUaTSI40bCPmqKmhnHlKaCOpc3By0gqRVM4r1+aQVI34DvBUgRk=
+  - secure: UrSVZn/hbbw6AnxHKThVPksrULEV/Gs2ZqknCpPI/uxB7448ypCjnOXBwovqkjZ/stE8SEL7DbBz05e8Ba5IYAuqh14Uy3n8YxBnlYW1UAHM4HUFUDDrrbrrG+QlQ7LLtPCFxTCi6iSNGukIBsxlRzMrvJ2xX/Di5n+gQb8QC9oYiJdYPzni04fFutfOTlMqv30odlhCmih2chlbijh2yKdj+4c7uphauGkSnwy2Dpm22522QoFbBTW6/h05GFVyO7eBieEjK/B3RRsCkAXDnW/pR+rLwVnlhndc2Um5u7c9vWUWRCQAsDozXXASzsjXQDsfuUY1gi8fPmtjTm8mNMn9svegaaO5v/zWB+SNU9hDm8Cb0JWsf4vy6TR+pl7v6WwTCIocXBDZ3T/sVqBr2TXm1u5QNEvJ/KG8B0FPUEzw/NVdYeG8vMpNqCI5F/1FqJBhFsSfy1PnbngHrJwSw5guY2/erXU5TTmGU1jvtagnNuJ5WbPG8enqEmihZOaXjYA0hPh8hFrbaEknEJ2jd11X8ft1O1ooLVns1hymgSXKNrEE6T/ncVJKJEbFK/XOOOCbUezaH/Ssq9e6/jitd/IQG8yQKe+rzz4EIGaIiDWsH2GtYrXF+YWiQ3T+wY/xRhR4Alvs+FaYChltjwMULQu+KTwbiyzCfeXPG5xyGtM=
