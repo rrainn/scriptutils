@@ -6,12 +6,18 @@ Array.prototype.insert = function(index) {
 
 Array.prototype.remove = function () {
     // If no arguments passed into remove function
-	if (Object.keys(arguments).length <= 0) {
+	if (arguments.length <= 0) {
         // Should do nothing
         return this;
 	}
-    var indexesToRemove = Object.keys(arguments).map((key) => {
-        return arguments[key];
+    var indexesToRemove = Object.keys(arguments).filter((key) => {
+        if (key == "length") {
+            return false;
+        } else {
+            return true;
+        }
+    }).map((key) => {
+        var index = arguments[key];
     }).sort((a, b) => {
         return a < b;
     });
