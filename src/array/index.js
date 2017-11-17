@@ -5,6 +5,11 @@ Array.prototype.insert = function(index) {
 };
 
 Array.prototype.remove = function () {
+    // If no arguments passed into remove function
+	if (Object.keys(arguments).length <= 0) {
+        // Should do nothing
+        return this;
+	}
     Object.keys(arguments).forEach((key) => {
         var index = arguments[key];
         if (this[index]) {
