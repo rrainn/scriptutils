@@ -12,7 +12,7 @@ Array.prototype.remove = function () {
 	}
     Object.keys(arguments).forEach((key) => {
         var index = arguments[key];
-        if (this[index] && (this[index] != undefined || this[index] != null || index < 0 || index > (this.length - 1))) {
+        if (this[index] && (this[index] != undefined || this[index] != null || index > 0 || index < (this.length - 1))) {
             this.splice(index, 1);
         }
     });
