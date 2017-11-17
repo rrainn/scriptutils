@@ -8,8 +8,10 @@ if [ "$TARGET" = "test-browser" ]; then
       if grep -q "All tests done, failures:" "browsertestoutput.txt"; ##note the space after the string you are searching for
       then
       echo "Test Failed"
+      exit 1
       else
       echo "Test Success"
+      exit 0
       fi
    else
       echo "Not running browser tests on pull requests"
