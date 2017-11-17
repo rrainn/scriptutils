@@ -1,7 +1,16 @@
 #!/bin/bash
 if [ "$TARGET" = "test-browser" ]; then
    if [ "$TRAVIS_PULL_REQUEST" = "false" ]; then
-      ./node_modules/.bin/gulp browser && ./node_modules/.bin/browserstack-runner
+      ./node_modules/.bin/gulp browser
+      touch browsertestoutput.txt
+      ./node_modules/.bin/browserstack-runner | tee browsertestoutput.txt
+      
+      if grep -q "All tests done, failures:" "browsertestoutput.txt"; ##note the space after the string you are searching for
+      then
+      echo "Test Failed"
+      else
+      echo "Test Success"
+      fi
    else
       echo "Not running browser tests on pull requests"
    fi
