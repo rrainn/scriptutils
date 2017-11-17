@@ -17,7 +17,7 @@ Array.prototype.remove = function () {
             return true;
         }
     }).map((key) => {
-        var index = arguments[key];
+        return arguments[key];
     }).sort((a, b) => {
         return a < b;
     });
