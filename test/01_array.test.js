@@ -82,6 +82,15 @@ describe('Array', function() {
 			array.remove(1, 0);
 			expect(array).to.deep.equal([]);
 		});
+		it('Should remove elements if multiple indexes are passed in and second index passed in doesn\'t exist', function () {
+			array.remove(0, 1);
+			expect(array).to.deep.equal([]);
+		});
+		it('Should remove elements if multiple indexes are passed in and second index passed in doesn\'t exist and elements still exist in array', function () {
+			array = ["Hello", "World", "Earth", "Universe"];
+			array.remove(1, 2);
+			expect(array).to.deep.equal(["Hello", "Universe"]);
+		});
 		it('Should return correct array after inserting', function () {
 			expect(array.remove(1)).to.deep.equal(["Hello"]);
 		});
