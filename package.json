@@ -8,7 +8,7 @@
     "coverage": "nyc report --reporter=text-lcov | coveralls",
     "build": "gulp",
     "version": "npm run build && git add -A dist",
-    "postversion": "git push -u && git push --tags"
+    "postversion": "git push -u && git push --tags && npm publish"
   },
   "keywords": [
     "javascript",
