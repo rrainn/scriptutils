@@ -14,7 +14,7 @@ Array.prototype.remove = function () {
     var indexesToRemove = Object.keys(arguments).map((key) => {
         return arguments[key];
     }).sort((a, b) => {
-        return a < b;
+        return b - a; // sort descending order
     });
     indexesToRemove.forEach((index) => {
         if (this[index] != undefined && this[index] != null && index >= 0 && index < this.length) {
