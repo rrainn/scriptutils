@@ -10,9 +10,19 @@ Array.prototype.remove = function () {
     var _arguments = arguments,
         _this = this;
 
-    Object.keys(arguments).forEach(function (key) {
-        var index = _arguments[key];
-        if (_this[index]) {
+    // If no arguments passed into remove function
+    if (arguments.length <= 0) {
+        // Should do nothing
+        return this;
+    }
+    delete arguments.length;
+    var indexesToRemove = Object.keys(arguments).map(function (key) {
+        return _arguments[key];
+    }).sort(function (a, b) {
+        return b - a; // sort descending order
+    });
+    indexesToRemove.forEach(function (index) {
+        if (_this[index] != undefined && _this[index] != null && index >= 0 && index < _this.length) {
             _this.splice(index, 1);
         }
     });
