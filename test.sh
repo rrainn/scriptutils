@@ -5,7 +5,7 @@ if [ "$TARGET" = "test-browser" ]; then
       touch browsertestoutput.txt
       ./node_modules/.bin/browserstack-runner | tee browsertestoutput.txt
       
-      if grep -q "All tests done, failures: 0." "browsertestoutput.txt"; ##note the space after the string you are searching for
+      if grep -q "All tests done, failures: 0." "browsertestoutput.txt";
       then
          echo "Test Success"
          exit 0
