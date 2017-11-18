@@ -1,5 +1,6 @@
 {
     "test_path": "browsertest/index.html",
+	"test_framework": "mocha",
     "browsers": [
         "chrome_latest",
         "chrome_62",

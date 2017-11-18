@@ -5,9 +5,19 @@ Array.prototype.insert = function(index) {
 };
 
 Array.prototype.remove = function () {
-    Object.keys(arguments).forEach((key) => {
-        var index = arguments[key];
-        if (this[index]) {
+    // If no arguments passed into remove function
+	if (arguments.length <= 0) {
+        // Should do nothing
+        return this;
+	}
+	delete arguments.length;
+    var indexesToRemove = Object.keys(arguments).map((key) => {
+        return arguments[key];
+    }).sort((a, b) => {
+        return a < b;
+    });
+    indexesToRemove.forEach((index) => {
+        if (this[index] != undefined && this[index] != null && index >= 0 && index < this.length) {
             this.splice(index, 1);
         }
     });
