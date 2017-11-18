@@ -10,8 +10,7 @@ Array.prototype.remove = function () {
         // Should do nothing
         return this;
 	}
-	var argumentKeys = Object.keys(arguments);
-	delete argumentKeys.length;
+	delete arguments.length;
     var indexesToRemove = Object.keys(arguments).map((key) => {
         return arguments[key];
     }).sort((a, b) => {
