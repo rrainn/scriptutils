@@ -46,6 +46,9 @@ Array.prototype.randomElement = function () {
 };
 
 Array.prototype.swap = function (a, b) {
+    if (!this[a] || !this[b]) {
+        return this;
+    }
 	var tmp = this[a];
 	this[a] = this[b];
 	this[b] = tmp;
