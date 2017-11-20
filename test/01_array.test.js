@@ -125,4 +125,56 @@ describe('Array', function() {
 			expect(array.indexOf(element)).to.be.above(-1);
 		});
 	}); // end "Random Element" describe
+	describe('Swap', function () {
+		var array = [];
+		beforeEach(function () {
+			array = ["Hello", "World"];
+		});
+		
+		it('Should return original array if nothing is passed in', function () {
+			array.swap();
+			expect(array).to.deep.equal(["Hello", "World"]);
+		});
+		it('Should return original array if index is function', function () {
+			array.swap(function(){});
+			expect(array).to.deep.equal(["Hello", "World"]);
+		});
+		it('Should return original array if index is array', function () {
+			array.swap([]);
+			expect(array).to.deep.equal(["Hello", "World"]);
+		});
+		it('Should return original array if index is negitive number', function () {
+			array.swap(-5);
+			expect(array).to.deep.equal(["Hello", "World"]);
+		});
+		it('Should return original array if index is greater than array length', function () {
+			array.swap(100);
+			expect(array).to.deep.equal(["Hello", "World"]);
+		});
+		it('Should return original array if only 1 index is passed in', function () {
+			array.swap(1);
+			expect(array).to.deep.equal(["Hello", "World"]);
+		});
+		it('Shouldn\'t swap elements if index passed in is greater than array length', function () {
+			array.swap(0, 5);
+			expect(array).to.deep.equal(["Hello", "World"]);
+		});
+		it('Shouldn\'t swap elements if index passed in is less than 0', function () {
+			array.swap(-5, 1);
+			expect(array).to.deep.equal(["Hello", "World"]);
+		});
+		it('Should swap elements if multiple indexes are passed in', function () {
+			array.swap(0, 1);
+			expect(array).to.deep.equal(["World", "Hello"]);
+		});
+		it('Should swap elements if multiple indexes are passed in, in reverse order', function () {
+			array.swap(1, 0);
+			expect(array).to.deep.equal(["World", "Hello"]);
+		});
+		it('Should swap elements if multiple indexes are passed in and array has more than two elements', function () {
+			array = ["Hello", "World", "Earth", "Universe"]
+			array.swap(0, 1);
+			expect(array).to.deep.equal(["World", "Hello", "Earth", "Universe"]);
+		});
+	}); // end "Swap" describe
 }); // end "Array" describe

@@ -50,7 +50,6 @@ myArray.insert(1, 2);
 console.log(myArray); // []
 ```
 
-
 #### Array.shuffle()
 
 This function will shuffle the array. This function has the potential to have different outputs every time it is run.
@@ -61,7 +60,6 @@ myArray.shuffle();
 console.log(myArray); // ["World", "Hello"]
 ```
 
-
 #### Array.randomElement()
 
 This function will return a random element in the given array. This function has the potential to have different outputs every time it is run.
@@ -70,6 +68,16 @@ This function will return a random element in the given array. This function has
 var myArray = ["Hello", "World"];
 myArray.randomElement();
 console.log(myArray); // "World"
+```
+
+#### Array.swap(firstIndex, secondIndex)
+
+This function will swap item(s) into an array at the indexes you specify. `firstIndex` and `secondIndex` reference the two items indexes that will be swapped in the array. If `firstIndex` or `secondIndex` don't exist in the array the array won't be changed.
+
+```
+var myArray = ["Hello", "World"];
+myArray.swap(0, 1);
+console.log(myArray); // ["World", "Hello"]
 ```
 
 
