@@ -1,7 +1,7 @@
 var scriptutils = require('../dist/node-test/index.js');
 var expect = require('chai').expect;
 var fs = require('fs');
-const path = require('path');
+var path = require('path');
 
 describe('Hash', function() {
 	describe('Hash Folder', function () {
@@ -86,37 +86,37 @@ describe('Hash', function() {
 		});
 		
 		it('Should return a string', function () {
-			let hash1 = scriptutils.hashFolder('tmphash');
+			var hash1 = scriptutils.hashFolder('tmphash');
 			expect(hash1).to.be.a('string');
 		});
 		it('Should return same string for the same folder', function () {
-			let hash1 = scriptutils.hashFolder('tmphash');
-			let hash2 = scriptutils.hashFolder('tmphash');
+			var hash1 = scriptutils.hashFolder('tmphash');
+			var hash2 = scriptutils.hashFolder('tmphash');
 			expect(hash1).to.equal(hash2);
 		});
 		it('Should return different strings for different folders', function () {
-			let hash1 = scriptutils.hashFolder('tmphash');
-			let hash2 = scriptutils.hashFolder('tmphash2');
+			var hash1 = scriptutils.hashFolder('tmphash');
+			var hash2 = scriptutils.hashFolder('tmphash2');
 			expect(hash1).to.not.equal(hash2);
 		});
 		it('Should return same strings for different folder names but same contents', function () {
-			let hash1 = scriptutils.hashFolder('tmphash');
-			let hash2 = scriptutils.hashFolder('tmphash3');
+			var hash1 = scriptutils.hashFolder('tmphash');
+			var hash2 = scriptutils.hashFolder('tmphash3');
 			expect(hash1).to.equal(hash2);
 		});
 		it('Should return same strings for different folder names but same contents and different file names', function () {
-			let hash1 = scriptutils.hashFolder('tmphash3');
-			let hash2 = scriptutils.hashFolder('tmphash4');
+			var hash1 = scriptutils.hashFolder('tmphash3');
+			var hash2 = scriptutils.hashFolder('tmphash4');
 			expect(hash1).to.equal(hash2);
 		});
 		it('Should return same strings for same contents but different ordered files', function () {
-			let hash1 = scriptutils.hashFolder('tmphash4');
-			let hash2 = scriptutils.hashFolder('tmphash5');
+			var hash1 = scriptutils.hashFolder('tmphash4');
+			var hash2 = scriptutils.hashFolder('tmphash5');
 			expect(hash1).to.equal(hash2);
 		});
 		it('Should return same strings for same contents but an empty folder within directory', function () {
-			let hash1 = scriptutils.hashFolder('tmphash5');
-			let hash2 = scriptutils.hashFolder('tmphash6');
+			var hash1 = scriptutils.hashFolder('tmphash5');
+			var hash2 = scriptutils.hashFolder('tmphash6');
 			expect(hash1).to.equal(hash2);
 		});
 		it('Should throw error if no files in directory', function () {
