@@ -11,7 +11,8 @@ var source = require('vinyl-source-stream');
 gulp.task('default', ["browser", "node"]);
 
 gulp.task('browser', function () {
-    return browserify({entries: './index.js', extensions: ['.js'], debug: true, basedir: __dirname + '/src', standalone: 'scriptutils', ignore: ['./hash/index.js']})
+    return browserify({entries: './index.js', extensions: ['.js'], debug: true, basedir: __dirname + '/src', standalone: 'scriptutils'})
+      .ignore('./src/hash/index.js')
       .transform(babelify)
       .bundle()
       .pipe(source('index.js'))
