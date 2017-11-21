@@ -1,4 +1,5 @@
 require('./array/index.js');
 
 var otherNumber = require('./other/number.js');
-module.exports = {...otherNumber};
+var hash = require('./hash/index.js');
+module.exports = {...otherNumber, ...hash};
