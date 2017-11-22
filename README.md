@@ -110,3 +110,15 @@ console.log(randomNumber); // a random number (float) between 5 and 50
 var randomNumber = scriptutils.randomFloat();
 console.log(randomNumber); // a random number (float) between 1 and 100
 ```
+
+
+### Hash
+
+#### hashFolder(folderpath)
+
+This function will return a hash of the files in the folder you pass in.
+
+```
+var folderHash = scriptutils.hashFolder("/");
+console.log(folderHash); // folder hash of files in "/" directory
+```
