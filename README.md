@@ -116,7 +116,7 @@ console.log(randomNumber); // a random number (float) between 1 and 100
 
 #### hashFolder(folderpath)
 
-This function will return a hash of the files in the folder you pass in.
+This function will return a hash of the files in the folder you pass in. **This function is only available in the Node.js version of scriptutils**.
 
 ```
 var folderHash = scriptutils.hashFolder("/");
