@@ -6,6 +6,7 @@ String.prototype.removeAfter = function (character) {
 	character.forEach((element) => {
 		self = self.substring(0, (self.indexOf(element) >= 0 && element.length > 0) ? self.indexOf(element) : self.length);
 	});
+	self = IEObjectToString(self);
 	return self;
 };
 
