@@ -10,6 +10,21 @@ String.prototype.removeAfter = function (character) {
 	return self;
 };
 
+String.prototype.removeBefore = function (character) {
+	let self = this;
+	if (!Array.isArray(character)) {
+		character = [character];
+	}
+	character.forEach((element) => {
+		if (element) {
+			self = self.substring((self.lastIndexOf(element[element.length-1]) >= 0 && element.length > 0) ? self.lastIndexOf(element[element.length-1])+1 : 0);
+		}
+	});
+	self = IEObjectToString(self);
+	return self;
+};
+
+
 // IE 9 fix where String.removeAfter and String.removeBefore returned an object when passing an empty array in, this function will convert that object back to a string
 function IEObjectToString(string) {
 	/* istanbul ignore if */

@@ -134,6 +134,16 @@ This function will return a new string removing the character you pass in and ev
 var myString = "Hello World";
 myString = myString.removeAfter(" ");
 console.log(myString); // "Hello"
+```
+
+#### String.removeBefore(character)
+
+This function will return a new string removing the character you pass in and everything before. *Unlike other scriptutils functions this function will not mutate the original string.*
+
+```
+var myString = "Hello World";
+myString = myString.removeBefore(" ");
+console.log(myString); // "World"
 
 
 ### Promise
