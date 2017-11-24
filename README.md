@@ -122,3 +122,101 @@ This function will return a hash of the files in the folder you pass in. **This 
 var folderHash = scriptutils.hashFolder("/");
 console.log(folderHash); // folder hash of files in "/" directory
 ```
+
+
+### Promise
+
+#### Promise.state()
+
+This function will return a new promise that will resolve with one of three options, "pending", "fulfilled", or "rejected". **This function is only available in the Node.js version of scriptutils**.
+
+```
+var myPromise = new Promise(function (resolve, reject) {
+	setTimeout(function() {
+		resolve("OK");
+	}, 1000);
+});
+myPromise.state().then(function (state) {
+	console.log(state); // "pending"
+});
+```
+
+```
+var myPromise = new Promise(function (resolve, reject) {
+	resolve("OK");
+});
+myPromise.state().then(function (state) {
+	console.log(state); // "fulfilled"
+});
+```
+
+```
+var myPromise = new Promise(function (resolve, reject) {
+	reject("Fail");
+});
+myPromise.state().then(function (state) {
+	console.log(state); // "rejected"
+});
+```
+
+
+#### Promise.reflect(promises)
+
+This function will return a new promise that will resolve when all promises passed into array `promises` are settled (fulfilled or rejected). The `value` passed into the `Promise.then()` function will be an array of objects containing the status of the promise (fulfilled or rejected) and the `value` the promise itself settled with. If the promise settled with an rejection, the `e` property will hold the value passed by that rejection. Similarly, if the promise settled with a fulfillment, the `v` property will hold the value passed by that fulfillment. **This function is only available in the Node.js version of scriptutils**.
+
+```
+var myPromise = new Promise(function (resolve, reject) {
+	setTimeout(function() {
+		resolve("OK");
+	}, 1000);
+});
+var myPromiseB = new Promise(function (resolve, reject) {
+	setTimeout(function() {
+		resolve("OK");
+	}, 1000);
+});
+Promise.reflect([myPromise, myPromiseB]).then(function (state) {
+	// At this point both myPromise and myPromiseB have been settled
+	console.log(state); // [{v:"OK", status:"fulfilled"}, {v:"OK", status:"fulfilled"}]
+});
+```
+
+```
+var myPromise = new Promise(function (resolve, reject) {
+	setTimeout(function() {
+		resolve("OK");
+	}, 1000);
+});
+var myPromiseB = new Promise(function (resolve, reject) {
+	setTimeout(function() {
+		reject("Fail");
+	}, 1000);
+});
+Promise.reflect([myPromise, myPromiseB]).then(function (state) {
+	// At this point both myPromise and myPromiseB have been settled
+	console.log(state); // [{v:"OK", status:"fulfilled"}, {e:"Fail", status:"rejected"}]
+});
+```
+
+```
+var myPromise = new Promise(function (resolve, reject) {
+	setTimeout(function() {
+		resolve("OK");
+	}, 1000);
+});
+var myPromiseB = new Promise(function (resolve, reject) {
+	setTimeout(function() {
+		reject("Fail");
+	}, 1000);
+});
+var myPromiseC = new Promise(function (resolve, reject) {
+	setTimeout(function() {
+		resolve("OK");
+	}, 1000);
+});
+Promise.reflect([myPromise, myPromiseB, myPromiseC]).then(function (state) {
+	// At this point both myPromise, myPromiseB, and myPromiseC have been settled
+	// Unlike Promise.all, this function won't resolve after the first rejection but will only resolve after ALL promises have been settled
+	console.log(state); // [{v:"OK", status:"fulfilled"}, {e:"Fail", status:"rejected"}, {v:"OK", status:"fulfilled"}]
+});
+```
