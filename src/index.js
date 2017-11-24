@@ -1,4 +1,5 @@
 require('./array/index.js');
+require('./string/index.js');
 require('./promise/index.js');
 
 var otherNumber = require('./other/number.js');
