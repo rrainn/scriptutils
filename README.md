@@ -122,3 +122,39 @@ This function will return a hash of the files in the folder you pass in. **This 
 var folderHash = scriptutils.hashFolder("/");
 console.log(folderHash); // folder hash of files in "/" directory
 ```
+
+
+### Promise
+
+#### Promise.state()
+
+This function will return a new promise that will resolve with one of three options, "pending", "fulfilled", or "rejected". **This function is only available in the Node.js version of scriptutils**.
+
+```
+var myPromise = new Promise(function (resolve, reject) {
+	setTimeout(function() {
+		resolve("OK");
+	}, 1000);
+});
+myPromise.state().then(function (state) {
+	console.log(state); // "pending"
+});
+```
+
+```
+var myPromise = new Promise(function (resolve, reject) {
+	resolve("OK");
+});
+myPromise.state().then(function (state) {
+	console.log(state); // "fulfilled"
+});
+```
+
+```
+var myPromise = new Promise(function (resolve, reject) {
+	reject("Fail");
+});
+myPromise.state().then(function (state) {
+	console.log(state); // "rejected"
+});
+```
