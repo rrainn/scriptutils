@@ -181,7 +181,6 @@ myPromise.state().then(function (state) {
 });
 ```
 
-
 #### Promise.reflect(promises)
 
 This function will return a new promise that will resolve when all promises passed into array `promises` are settled (fulfilled or rejected). The `value` passed into the `Promise.then()` function will be an array of objects containing the status of the promise (fulfilled or rejected) and the `value` the promise itself settled with. If the promise settled with an rejection, the `e` property will hold the value passed by that rejection. Similarly, if the promise settled with a fulfillment, the `v` property will hold the value passed by that fulfillment. **This function is only available in the Node.js version of scriptutils**.
