@@ -144,6 +144,7 @@ This function will return a new string removing the character you pass in and ev
 var myString = "Hello World";
 myString = myString.removeBefore(" ");
 console.log(myString); // "World"
+```
 
 
 ### Promise
