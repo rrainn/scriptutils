@@ -40,5 +40,16 @@ describe('String', function() {
 			string = string.removeAfter("H");
 			expect(string).to.deep.equal("");
 		});
+		it('Should return correct string if array of strings is passed in', function () {
+			string = string.removeAfter([" ", "e"]);
+			expect(string).to.deep.equal("H");
+		});
+		it('Should return same string no matter the order of elements passed in', function () {
+			expect(string.removeAfter([" ", "e"])).to.deep.equal(string.removeAfter(["e", " "]));
+		});
+		it('Should return original string if array of numbers is passed in', function () {
+			string = string.removeAfter([1, 7]);
+			expect(string).to.deep.equal("Hello World");
+		});
 	}); // end "Remove After" describe
 }); // end "string" describe
