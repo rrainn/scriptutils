@@ -5,4 +5,5 @@ var _extends = Object.assign || function (target) { for (var i = 1; i < argument
 require('./array/index.js');
 
 var otherNumber = require('./other/number.js');
-module.exports = _extends({}, otherNumber);
+var hash = require('./hash/index.js');
+module.exports = _extends({}, otherNumber, hash);
