@@ -1,3 +1,10 @@
 String.prototype.removeAfter = function (character) {
-	return this.substring(0, (this.indexOf(character) >= 0 && character.length > 0) ? this.indexOf(character) : this.length);
+	let self = this;
+	if (!Array.isArray(character)) {
+		character = [character];
+	}
+	character.forEach((element) => {
+		self = self.substring(0, (self.indexOf(element) >= 0 && element.length > 0) ? self.indexOf(element) : self.length);
+	});
+	return self;
 };
