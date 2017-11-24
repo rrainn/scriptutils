@@ -122,3 +122,16 @@ This function will return a hash of the files in the folder you pass in. **This 
 var folderHash = scriptutils.hashFolder("/");
 console.log(folderHash); // folder hash of files in "/" directory
 ```
+
+
+### String
+
+#### String.removeAfter(character)
+
+This function will return a new string removing the character you pass in and everything after. *Unlike other scriptutils functions this function will not mutate the original string.*
+
+```
+var myString = "Hello World";
+myString = myString.removeAfter(" ");
+console.log(myString); // "Hello"
+```
