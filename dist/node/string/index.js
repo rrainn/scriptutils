@@ -19,11 +19,17 @@ String.prototype.removeBefore = function (character) {
 	if (!Array.isArray(character)) {
 		character = [character];
 	}
-	character.forEach(function (element) {
-		if (element) {
-			self = self.substring(self.lastIndexOf(element[element.length - 1]) >= 0 && element.length > 0 ? self.lastIndexOf(element[element.length - 1]) + 1 : 0);
-		}
-	});
+	var firstOccurance = character.map(function (element) {
+		return { index: self.lastIndexOf(element), data: element };
+	}).sort(function (a, b) {
+		return b.index - a.index;
+	}).filter(function (element) {
+		return element.index >= 0 && element.data;
+	})[0];
+
+	if (firstOccurance) {
+		self = self.substring(firstOccurance.index + 1 + (firstOccurance.data.length - 1));
+	}
 	self = IEObjectToString(self);
 	return self;
 };
