@@ -15,11 +15,17 @@ String.prototype.removeBefore = function (character) {
 	if (!Array.isArray(character)) {
 		character = [character];
 	}
-	character.forEach((element) => {
-		if (element) {
-			self = self.substring((self.lastIndexOf(element[element.length-1]) >= 0 && element.length > 0) ? self.lastIndexOf(element[element.length-1])+1 : 0);
-		}
-	});
+	let firstOccurance = character.map((element) => {
+		return {index: self.lastIndexOf(element), data: element};
+	}).sort((a, b) => {
+		return a.index < b.index;
+	}).filter((element) => {
+		return element.index >= 0 && element.data;
+	})[0];
+	
+	if (firstOccurance) {
+		self = self.substring(firstOccurance.index+1+(firstOccurance.data.length - 1));
+	}
 	self = IEObjectToString(self);
 	return self;
 };
