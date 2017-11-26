@@ -101,5 +101,13 @@ describe('String', function() {
 			string = string.removeBefore([1, 7]);
 			expect(string).to.deep.equal("Hello World");
 		});
+		it('Should return correct string if string to remove occurs multiple times', function () {
+			string = string.removeBefore("l");
+			expect(string).to.deep.equal("d");
+		});
+		it('Should return correct string if last letter in string passed in occurs multiple times but string passed in only occurs once', function () {
+			string = string.removeBefore("Hel");
+			expect(string).to.deep.equal("lo World");
+		});
 	}); // end "Remove Before" describe
 }); // end "string" describe
