@@ -18,7 +18,7 @@ String.prototype.removeBefore = function (character) {
 	let firstOccurance = character.map((element) => {
 		return {index: self.lastIndexOf(element), data: element};
 	}).sort((a, b) => {
-		return a.index < b.index;
+		return b.index - a.index;
 	}).filter((element) => {
 		return element.index >= 0 && element.data;
 	})[0];
