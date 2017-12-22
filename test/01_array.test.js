@@ -203,4 +203,30 @@ describe('Array', function() {
 			expect(array.max()).to.deep.equal(-1);
 		});
 	}); // end "Max" describe
+	describe('Min', function () {
+		var array = [];
+		beforeEach(function () {
+			array = ["Hello", "World"];
+		});
+		
+		it('Should return NaN if array is words', function () {
+			expect(array.min()).to.deep.equal(NaN);
+		});
+		it('Should return 1 if 1 is the lowest number in array', function () {
+			array = [1,2,3,4,5];
+			expect(array.min()).to.deep.equal(1);
+		});
+		it('Should return 1 if 1 is the lowest number in array and elements are in random order', function () {
+			array = [5,2,1,3,4];
+			expect(array.min()).to.deep.equal(1);
+		});
+		it('Should return -1 if -1 is the lowest number in array', function () {
+			array = [-1,2,3,4,5];
+			expect(array.min()).to.deep.equal(-1);
+		});
+		it('Should return -1 if -1 is the lowest number in array and elements are in random order', function () {
+			array = [5,2,-1,3,4];
+			expect(array.min()).to.deep.equal(-1);
+		});
+	}); // end "Min" describe
 }); // end "Array" describe

@@ -58,3 +58,7 @@ Array.prototype.swap = function (a, b) {
 Array.prototype.max = function() {
   return Math.max(...this);
 };
+
+Array.prototype.min = function() {
+  return Math.min(...this);
+};
