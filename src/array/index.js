@@ -54,3 +54,7 @@ Array.prototype.swap = function (a, b) {
 	this[b] = tmp;
 	return this;
 };
+
+Array.prototype.max = function() {
+  return Math.max(...this);
+};

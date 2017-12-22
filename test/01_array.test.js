@@ -177,4 +177,30 @@ describe('Array', function() {
 			expect(array).to.deep.equal(["World", "Hello", "Earth", "Universe"]);
 		});
 	}); // end "Swap" describe
+	describe('Max', function () {
+		var array = [];
+		beforeEach(function () {
+			array = ["Hello", "World"];
+		});
+		
+		it('Should return NaN if array is words', function () {
+			expect(array.max()).to.deep.equal(NaN);
+		});
+		it('Should return 5 if 5 is the largest number in array', function () {
+			array = [1,2,3,4,5];
+			expect(array.max()).to.deep.equal(5);
+		});
+		it('Should return 5 if 5 is the largest number in array and elements are in random order', function () {
+			array = [5,2,1,3,4];
+			expect(array.max()).to.deep.equal(5);
+		});
+		it('Should return -1 if -1 is the largest number in array', function () {
+			array = [-1,-2,-3,-4,-5];
+			expect(array.max()).to.deep.equal(-1);
+		});
+		it('Should return -1 if -1 is the largest number in array and elements are in random order', function () {
+			array = [-5,-2,-1,-3,-4];
+			expect(array.max()).to.deep.equal(-1);
+		});
+	}); // end "Max" describe
 }); // end "Array" describe
