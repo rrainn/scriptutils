@@ -66,8 +66,7 @@ This function will return a random element in the given array. This function has
 
 ```
 var myArray = ["Hello", "World"];
-myArray.randomElement();
-console.log(myArray); // "World"
+console.log(myArray.randomElement()); // "World"
 ```
 
 #### Array.swap(firstIndex, secondIndex)
