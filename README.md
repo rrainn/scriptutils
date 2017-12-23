@@ -80,6 +80,24 @@ myArray.swap(0, 1);
 console.log(myArray); // ["World", "Hello"]
 ```
 
+#### Array.max()
+
+This function will return the largest number in an array. If no numbers exist in array NaN will be returned.
+
+```
+var myArray = [1, 2, 3, 4, 5];
+console.log(myArray.max()); // 5
+```
+
+#### Array.min()
+
+This function will return the smallest number in an array. If no numbers exist in array NaN will be returned.
+
+```
+var myArray = [1, 2, 3, 4, 5];
+console.log(myArray.min()); // 1
+```
+
 
 ### Numbers
 
