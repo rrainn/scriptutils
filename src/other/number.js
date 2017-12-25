@@ -1,4 +1,4 @@
-module.exports.randomInt = function (min, max) {
+module.exports.randomInt = function(min, max) {
 	if (typeof min != 'number' || typeof max != 'number') {
 		return Math.floor(Math.random() * 100) + 1;
 	} else {
@@ -6,7 +6,7 @@ module.exports.randomInt = function (min, max) {
 	}
 }
 
-module.exports.randomFloat = function (min, max) {
+module.exports.randomFloat = function(min, max) {
 	if (typeof min != 'number' || typeof max != 'number') {
 		return (Math.random() * 100) + 1;
 	} else {

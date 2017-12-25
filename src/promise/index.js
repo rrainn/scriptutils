@@ -1,4 +1,4 @@
-Promise.reflect = function (promises) {
+Promise.reflect = function(promises) {
 	return Promise.all(promises.map((promise) => {
 		return promise.then((v) => {
 			return {v, status: "fulfilled"};
@@ -8,7 +8,11 @@ Promise.reflect = function (promises) {
 	}));
 };
 
-Promise.prototype.state = function () {
-  const promiseCheck = {};
-  return Promise.race([this, promiseCheck]).then(value => (value === promiseCheck) ? "pending" : "fulfilled", () => "rejected");
+Promise.prototype.state = function() {
+	const promiseCheck = {};
+	return Promise.race([this, promiseCheck]).then(
+		value => (value === promiseCheck)
+		? "pending"
+		: "fulfilled",
+	() => "rejected");
 };
