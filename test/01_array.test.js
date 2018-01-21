@@ -229,4 +229,18 @@ describe('Array', function() {
 			expect(array.min()).to.deep.equal(-1);
 		});
 	}); // end "Min" describe
+	describe('First', function () {
+		var array = [];
+		beforeEach(function () {
+			array = ["Hello", "World"];
+		});
+		
+		it('Should return undefined if array empty', function () {
+			array = [];
+			expect(array.first()).to.be.undefined;
+		});
+		it('Should return "Hello" if "Hello" is the first element in array', function () {
+			expect(array.first()).to.deep.equal("Hello");
+		});
+	}); // end "First" describe
 }); // end "Array" describe

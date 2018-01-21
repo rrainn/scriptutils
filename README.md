@@ -97,6 +97,15 @@ var myArray = [1, 2, 3, 4, 5];
 console.log(myArray.min()); // 1
 ```
 
+#### Array.first()
+
+This function will return the first element in an array. If array is empty undefined will be returned.
+
+```
+var myArray = [1, 2, 3, 4, 5];
+console.log(myArray.first()); // 1
+```
+
 
 ### Numbers
 
