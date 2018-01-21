@@ -106,6 +106,15 @@ var myArray = [1, 2, 3, 4, 5];
 console.log(myArray.first()); // 1
 ```
 
+#### Array.last()
+
+This function will return the last element in an array. If array is empty undefined will be returned.
+
+```
+var myArray = [1, 2, 3, 4, 5];
+console.log(myArray.last()); // 5
+```
+
 
 ### Numbers
 
