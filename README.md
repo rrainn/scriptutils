@@ -146,6 +146,20 @@ var randomNumber = scriptutils.randomFloat();
 console.log(randomNumber); // a random number (float) between 1 and 100
 ```
 
+#### Number.isFloat()
+
+This function will return a boolean depending on if the number is an float.
+
+```
+var randomNumber = 5;
+console.log(randomNumber.isFloat()); // false
+```
+
+```
+var randomNumber = 1.25;
+console.log(randomNumber.isFloat()); // true
+```
+
 
 ### Hash
 
