@@ -146,6 +146,21 @@ var randomNumber = scriptutils.randomFloat();
 console.log(randomNumber); // a random number (float) between 1 and 100
 ```
 
+#### Number.isInt()
+
+This function will return a boolean depending on if the number is an integer.
+
+```
+var randomNumber = 5;
+console.log(randomNumber.isInt()); // true
+```
+
+```
+var randomNumber = 1.25;
+console.log(randomNumber.isInt()); // false
+```
+
+
 #### Number.isFloat()
 
 This function will return a boolean depending on if the number is an float.
