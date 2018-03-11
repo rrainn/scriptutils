@@ -161,6 +161,21 @@ console.log(randomNumber.isInt()); // false
 ```
 
 
+#### Number.isFloat()
+
+This function will return a boolean depending on if the number is an float.
+
+```
+var randomNumber = 5;
+console.log(randomNumber.isFloat()); // false
+```
+
+```
+var randomNumber = 1.25;
+console.log(randomNumber.isFloat()); // true
+```
+
+
 ### Hash
 
 #### hashFolder(folderpath)

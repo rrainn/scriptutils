@@ -251,7 +251,7 @@ describe('Other', function() {
 				});
 			});
 		}); // end "Get Random Float" describe
-		describe('isInt', function () {
+    		describe('isInt', function () {
 			it('Should return false if NaN is passed in', function () {
 				var input = NaN;
 				expect(input.isInt()).to.be.false;
@@ -292,6 +292,48 @@ describe('Other', function() {
 				var input = -1.9;
 				expect(input.isInt()).to.be.false;
 			});
-		}); // end "isInt" describe
+    }); // end "isInt" describe
+		describe('isFloat', function () {
+			it('Should return false if NaN is passed in', function () {
+				var input = NaN;
+				expect(input.isFloat()).to.be.false;
+			});
+			it('Should return false if 0 is passed in', function () {
+				var input = 0;
+				expect(input.isFloat()).to.be.false;
+			});
+			it('Should return false if 1 is passed in', function () {
+				var input = 1;
+				expect(input.isFloat()).to.be.false;
+			});
+			it('Should return false if 2 is passed in', function () {
+				var input = 2;
+				expect(input.isFloat()).to.be.false;
+			});
+			it('Should return false if 3 is passed in', function () {
+				var input = 3;
+				expect(input.isFloat()).to.be.false;
+			});
+			it('Should return false if -1 is passed in', function () {
+				var input = -1;
+				expect(input.isFloat()).to.be.false;
+			});
+			it('Should return true if 1.2 is passed in', function () {
+				var input = 1.2;
+				expect(input.isFloat()).to.be.true;
+			});
+			it('Should return true if 5.7 is passed in', function () {
+				var input = 1.2;
+				expect(input.isFloat()).to.be.true;
+			});
+			it('Should return true if 9.12 is passed in', function () {
+				var input = 9.12;
+				expect(input.isFloat()).to.be.true;
+			});
+			it('Should return true if -1.9 is passed in', function () {
+				var input = -1.9;
+				expect(input.isFloat()).to.be.true;
+			});
+		}); // end "isFloat" describe
 	}); // end "Number" describe
 }); // end "Other" describe

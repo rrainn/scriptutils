@@ -17,3 +17,7 @@ module.exports.randomFloat = function(min, max) {
 Number.prototype.isInt = function() {
 	return this % 1 === 0;
 };
+
+Number.prototype.isFloat = function() {
+	return this % 1 !== 0 && !isNaN(this);
+}
