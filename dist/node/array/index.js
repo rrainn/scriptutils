@@ -69,3 +69,11 @@ Array.prototype.max = function () {
 Array.prototype.min = function () {
 	return Math.min.apply(Math, _toConsumableArray(this));
 };
+
+Array.prototype.first = function () {
+	return this[0];
+};
+
+Array.prototype.last = function () {
+	return this[this.length - 1];
+};

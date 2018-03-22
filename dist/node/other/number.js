@@ -15,3 +15,11 @@ module.exports.randomFloat = function (min, max) {
 		return Math.random() * (max - min + 1) + min;
 	}
 };
+
+Number.prototype.isInt = function () {
+	return this % 1 === 0;
+};
+
+Number.prototype.isFloat = function () {
+	return this % 1 !== 0 && !isNaN(this);
+};
