@@ -46,7 +46,7 @@ console.log(myArray); // ["Hello"]
 
 ```
 var myArray = ["Hello", "World"];
-myArray.insert(1, 2);
+myArray.remove(1, 2);
 console.log(myArray); // []
 ```
 
