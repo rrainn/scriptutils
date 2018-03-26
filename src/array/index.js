@@ -70,3 +70,10 @@ Array.prototype.first = function() {
 Array.prototype.last = function() {
 	return this[this.length - 1];
 };
+
+Array.prototype.frontPad = function (item, length) {
+	if (isNaN(length)) {
+		return this;
+	}
+	return [...Array((length - this.length) > this.length ? (length - this.length) : 0).fill(item), ...this];
+};
