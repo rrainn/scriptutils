@@ -115,6 +115,20 @@ var myArray = [1, 2, 3, 4, 5];
 console.log(myArray.last()); // 5
 ```
 
+#### Array.frontPad(item, length)
+
+This function will return a new array with padding to the length specified. If length specified is less than array length the same array will be returned.
+
+```
+var myArray = [1, 2, 3, 4, 5];
+console.log(myArray.frontPad("item", 8)); // ["item", "item", "item", 1, 2, 3, 4, 5]
+```
+
+```
+var myArray = [1, 2, 3, 4, 5];
+console.log(myArray.frontPad("item", 3)); // [1, 2, 3, 4, 5]
+```
+
 
 ### Numbers
 
