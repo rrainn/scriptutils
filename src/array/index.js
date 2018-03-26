@@ -77,3 +77,10 @@ Array.prototype.frontPad = function (item, length) {
 	}
 	return [...Array((length - this.length) > this.length ? (length - this.length) : 0).fill(item), ...this];
 };
+
+Array.prototype.backPad = function (item, length) {
+	if (isNaN(length)) {
+		return this;
+	}
+	return [...this, ...Array((length - this.length) > this.length ? (length - this.length) : 0).fill(item)];
+};
