@@ -71,6 +71,7 @@ Array.prototype.last = function() {
 	return this[this.length - 1];
 };
 
+/* istanbul ignore if */
 if (!Array.prototype.fill) {
   Object.defineProperty(Array.prototype, 'fill', {
     value: function(value) {
