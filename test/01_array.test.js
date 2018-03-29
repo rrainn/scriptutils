@@ -257,4 +257,46 @@ describe('Array', function() {
 			expect(array.last()).to.deep.equal("World");
 		});
 	}); // end "Last" describe
+	describe('Padding', function () {
+		var array = [];
+		beforeEach(function () {
+			array = ["Hello", "World"];
+		});
+		
+		describe('Front Padding', function () {
+			it('Should return accurate array', function () {
+				expect(array.frontPad("item", 5)).to.deep.equal(["item", "item", "item", "Hello", "World"]);
+			});
+			it('Shouldn\'t fail if current array length is greater than length passed in', function () {
+				expect(array.frontPad("item", 1)).to.deep.equal(["Hello", "World"]);
+			});
+			it('Shouldn\'t fail if current array length is equal to array length passed in', function () {
+				expect(array.frontPad("item", 2)).to.deep.equal(["Hello", "World"]);
+			});
+			it('Shouldn\'t fail if nothing is passed into function', function () {
+				expect(array.frontPad()).to.deep.equal(["Hello", "World"]);
+			});
+			it('Shouldn\'t fail if only item passed into function', function () {
+				expect(array.frontPad("item")).to.deep.equal(["Hello", "World"]);
+			});
+		});
+		
+		describe('Back Padding', function () {
+			it('Should return accurate array', function () {
+				expect(array.backPad("item", 5)).to.deep.equal(["Hello", "World", "item", "item", "item"]);
+			});
+			it('Shouldn\'t fail if current array length is greater than length passed in', function () {
+				expect(array.backPad("item", 1)).to.deep.equal(["Hello", "World"]);
+			});
+			it('Shouldn\'t fail if current array length is equal to array length passed in', function () {
+				expect(array.backPad("item", 2)).to.deep.equal(["Hello", "World"]);
+			});
+			it('Shouldn\'t fail if nothing is passed into function', function () {
+				expect(array.backPad()).to.deep.equal(["Hello", "World"]);
+			});
+			it('Shouldn\'t fail if only item passed into function', function () {
+				expect(array.backPad("item")).to.deep.equal(["Hello", "World"]);
+			});
+		});
+	});
 }); // end "Array" describe

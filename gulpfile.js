@@ -14,6 +14,7 @@ gulp.task('browser', function () {
     return browserify({entries: './index.js', extensions: ['.js'], debug: true, basedir: __dirname + '/src', standalone: 'scriptutils'})
       .ignore('./src/hash/index.js')
 	  .ignore('./src/promise/index.js')
+	  .ignore('./src/other/timeout.js')
       .transform(babelify)
       .bundle()
       .pipe(source('index.js'))

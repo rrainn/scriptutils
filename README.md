@@ -115,6 +115,34 @@ var myArray = [1, 2, 3, 4, 5];
 console.log(myArray.last()); // 5
 ```
 
+#### Array.frontPad(item, length)
+
+This function will return a new array with padding to the length specified. If length specified is less than array length the same array will be returned.
+
+```
+var myArray = [1, 2, 3, 4, 5];
+console.log(myArray.frontPad("item", 8)); // ["item", "item", "item", 1, 2, 3, 4, 5]
+```
+
+```
+var myArray = [1, 2, 3, 4, 5];
+console.log(myArray.frontPad("item", 3)); // [1, 2, 3, 4, 5]
+```
+
+#### Array.backPad(item, length)
+
+This function will return a new array with padding to the length specified. If length specified is less than array length the same array will be returned.
+
+```
+var myArray = [1, 2, 3, 4, 5];
+console.log(myArray.backPad("item", 8)); // [1, 2, 3, 4, 5, "item", "item", "item"]
+```
+
+```
+var myArray = [1, 2, 3, 4, 5];
+console.log(myArray.backPad("item", 3)); // [1, 2, 3, 4, 5]
+```
+
 
 ### Numbers
 
@@ -304,5 +332,23 @@ Promise.reflect([myPromise, myPromiseB, myPromiseC]).then(function (state) {
 	// At this point both myPromise, myPromiseB, and myPromiseC have been settled
 	// Unlike Promise.all, this function won't resolve after the first rejection but will only resolve after ALL promises have been settled
 	console.log(state); // [{v:"OK", status:"fulfilled"}, {e:"Fail", status:"rejected"}, {v:"OK", status:"fulfilled"}]
+});
+```
+
+### Timeout
+
+#### scriptutils.timeout(ms)
+
+This function will return a promise that will resolve after the number of milliseconds passed in. The promise will reject if an invalid number of milliseconds are passed in. **This function is only available in the Node.js version of scriptutils**.
+
+```
+scriptutils.timeout(1000).then(function() {
+	console.log("This will be run after 1 second");
+});
+```
+
+```
+scriptutils.timeout("test").catch(function() {
+	console.log("This will be run because the number of milliseconds is invalid");
 });
 ```
