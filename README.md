@@ -334,3 +334,21 @@ Promise.reflect([myPromise, myPromiseB, myPromiseC]).then(function (state) {
 	console.log(state); // [{v:"OK", status:"fulfilled"}, {e:"Fail", status:"rejected"}, {v:"OK", status:"fulfilled"}]
 });
 ```
+
+### Timeout
+
+#### scriptutils.timeout(ms)
+
+This function will return a promise that will resolve after the number of milliseconds passed in. The promise will reject if an invalid number of milliseconds are passed in. **This function is only available in the Node.js version of scriptutils**.
+
+```
+scriptutils.timeout(1000).then(function() {
+	console.log("This will be run after 1 second");
+});
+```
+
+```
+scriptutils.timeout("test").catch(function() {
+	console.log("This will be run because the number of milliseconds is invalid");
+});
+```
