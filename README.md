@@ -352,3 +352,7 @@ scriptutils.timeout("test").catch(function() {
 	console.log("This will be run because the number of milliseconds is invalid");
 });
 ```
+
+### Mutation
+
+All functions in scriptutils are non-mutating. You must set your variable to the new variable that is returned.
