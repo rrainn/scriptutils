@@ -24,13 +24,13 @@ This function will insert item(s) into an array at the index you specify. `index
 
 ```
 var myArray = ["Hello", "World"];
-myArray.insert(1, "My");
+myArray = myArray.insert(1, "My");
 console.log(myArray); // ["Hello", "My", "World"]
 ```
 
 ```
 var myArray = ["Hello", "World"];
-myArray.insert(1, ["My", "Amazing"]);
+myArray = myArray.insert(1, ["My", "Amazing"]);
 console.log(myArray); // ["Hello", "My", "Amazing", "World"]
 ```
 
@@ -40,13 +40,13 @@ This function will remove the item at the corresponding index. `index` correspon
 
 ```
 var myArray = ["Hello", "World"];
-myArray.remove(1);
+myArray = myArray.remove(1);
 console.log(myArray); // ["Hello"]
 ```
 
 ```
 var myArray = ["Hello", "World"];
-myArray.remove(1, 2);
+myArray = myArray.remove(1, 2);
 console.log(myArray); // []
 ```
 
@@ -56,7 +56,7 @@ This function will shuffle the array. This function has the potential to have di
 
 ```
 var myArray = ["Hello", "World"];
-myArray.shuffle();
+myArray = myArray.shuffle();
 console.log(myArray); // ["World", "Hello"]
 ```
 
@@ -75,7 +75,7 @@ This function will swap item(s) into an array at the indexes you specify. `first
 
 ```
 var myArray = ["Hello", "World"];
-myArray.swap(0, 1);
+myArray = myArray.swap(0, 1);
 console.log(myArray); // ["World", "Hello"]
 ```
 
@@ -352,3 +352,7 @@ scriptutils.timeout("test").catch(function() {
 	console.log("This will be run because the number of milliseconds is invalid");
 });
 ```
+
+### Mutation
+
+All functions in scriptutils are non-mutating. You must set your variable to the new variable that is returned.
