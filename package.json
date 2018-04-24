@@ -1,6 +1,6 @@
 {
 	"name": "scriptutils",
-	"version": "1.6.0",
+	"version": "2.0.0",
 	"description": "Utilities to make Javascript Easy",
 	"main": "dist/node/index.js",
 	"scripts": {
