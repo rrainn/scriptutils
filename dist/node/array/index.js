@@ -3,19 +3,20 @@
 function _toConsumableArray(arr) { if (Array.isArray(arr)) { for (var i = 0, arr2 = Array(arr.length); i < arr.length; i++) { arr2[i] = arr[i]; } return arr2; } else { return Array.from(arr); } }
 
 Array.prototype.insert = function (index) {
-	index = Math.min(index, this.length);
-	arguments.length > 1 && this.splice.apply(this, [index, 0].concat([].pop.call(arguments))) && this.insert.apply(this, arguments);
-	return this;
+	var array = [].concat(_toConsumableArray(this));
+	index = Math.min(index, array.length);
+	arguments.length > 1 && array.splice.apply(array, [index, 0].concat([].pop.call(arguments))) && array.insert.apply(array, arguments);
+	return array;
 };
 
 Array.prototype.remove = function () {
-	var _arguments = arguments,
-	    _this = this;
+	var _arguments = arguments;
 
+	var array = [].concat(_toConsumableArray(this));
 	// If no arguments passed into remove function
 	if (arguments.length <= 0) {
 		// Should do nothing
-		return this;
+		return array;
 	}
 	delete arguments.length;
 	var indexesToRemove = Object.keys(arguments).map(function (key) {
@@ -24,15 +25,16 @@ Array.prototype.remove = function () {
 		return b - a; // sort descending order
 	});
 	indexesToRemove.forEach(function (index) {
-		if (_this[index] != undefined && _this[index] != null && index >= 0 && index < _this.length) {
-			_this.splice(index, 1);
+		if (array[index] != undefined && array[index] != null && index >= 0 && index < array.length) {
+			array.splice(index, 1);
 		}
 	});
-	return this;
+	return array;
 };
 
 Array.prototype.shuffle = function () {
-	var currentIndex = this.length;
+	var array = [].concat(_toConsumableArray(this));
+	var currentIndex = array.length;
 	var temporaryValue;
 	var randomIndex;
 
@@ -40,12 +42,12 @@ Array.prototype.shuffle = function () {
 		randomIndex = Math.floor(Math.random() * currentIndex);
 		currentIndex -= 1;
 
-		temporaryValue = this[currentIndex];
-		this[currentIndex] = this[randomIndex];
-		this[randomIndex] = temporaryValue;
+		temporaryValue = array[currentIndex];
+		array[currentIndex] = array[randomIndex];
+		array[randomIndex] = temporaryValue;
 	}
 
-	return this;
+	return array;
 };
 
 Array.prototype.randomElement = function () {
@@ -53,13 +55,14 @@ Array.prototype.randomElement = function () {
 };
 
 Array.prototype.swap = function (a, b) {
-	if (!this[a] || !this[b]) {
-		return this;
+	var array = [].concat(_toConsumableArray(this));
+	if (!array[a] || !array[b]) {
+		return array;
 	}
-	var tmp = this[a];
-	this[a] = this[b];
-	this[b] = tmp;
-	return this;
+	var tmp = array[a];
+	array[a] = array[b];
+	array[b] = tmp;
+	return array;
 };
 
 Array.prototype.max = function () {
