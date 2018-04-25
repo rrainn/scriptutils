@@ -8,7 +8,7 @@ var buffer = require('vinyl-buffer');
 var source = require('vinyl-source-stream');
 
 
-gulp.task('default', ["browser", "node"]);
+gulp.task('default', gulp.series("browser", "node"));
 
 gulp.task('browser', function () {
     return browserify({entries: './index.js', extensions: ['.js'], debug: true, basedir: __dirname + '/src', standalone: 'scriptutils'})
