@@ -8,8 +8,6 @@ var buffer = require('vinyl-buffer');
 var source = require('vinyl-source-stream');
 
 
-gulp.task('default', ["browser", "node"]);
-
 gulp.task('browser', function () {
     return browserify({entries: './index.js', extensions: ['.js'], debug: true, basedir: __dirname + '/src', standalone: 'scriptutils'})
       .ignore('./src/hash/index.js')
@@ -25,13 +23,15 @@ gulp.task('browser', function () {
 });
 
 gulp.task('node', function () {
-    gulp.src("./src/**")
+    return gulp.src("./src/**")
         .pipe(babel())
         .pipe(gulp.dest("./dist/node"))
 })
 
 gulp.task('node-test', function () {
-    gulp.src("./src/**")
+    return gulp.src("./src/**")
         .pipe(babel({plugins: ["istanbul"]}))
         .pipe(gulp.dest("./dist/node-test"))
 })
+
+gulp.task('default', gulp.series('browser', 'node'))
